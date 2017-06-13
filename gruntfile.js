@@ -21,20 +21,16 @@ module.exports = function(grunt) {
 
         concat: {
             options: {
-                // define a string to put between each file in the concatenated output
                 separator: ';'
             },
             dist: {
-                // the files to concatenate
                 src: ['src/**/*.js'],
-                // the location of the resulting JS file
                 dest: 'dist/js/<%= pkg.name %>.js'
             }
         },
 
         uglify: {
             options: {
-                // the banner is inserted at the top of the output
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
             },
             dist: {
@@ -49,11 +45,8 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            // define the files to lint
             files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
-            // configure JSHint (documented at http://www.jshint.com/docs/)
             options: {
-                // more options here if you want to override JSHint defaults
                 globals: {
                     jQuery: true,
                     console: true,
